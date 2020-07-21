@@ -3,15 +3,27 @@ package com.narshProject;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import baseClass.baseClass;
+
 import loginPageObjects.loginPage;
 
-public class loginTestCase extends baseClass {
+public class loginTestCase  {
   
 	public static WebDriver driver;
+	public configReader config1;
+	public BrowserFactory browser;
 	
+
+	@BeforeTest
+	public void setUpSuite() {
+		
+		config1=new configReader();
+		browser=new BrowserFactory();
+		
+	}
 	
 	@Test
   public void launchBrowser() throws Exception {
