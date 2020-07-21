@@ -1,5 +1,7 @@
 package loginPageObjects;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,15 +29,16 @@ public class loginPage extends baseClass{
 	
 	public void verifyLoginPage(String un,String pw) throws Exception {
 		
-		
-		uname.sendKeys(un);
-		pword.sendKeys(pw);
+		//driver.findElement(By.name("user")).sendKeys("tester",Keys.ENTER);
+		uname.sendKeys(un,Keys.ENTER);
+		pword.sendKeys(pw,Keys.ENTER);
 		
 	}
 	
 	public void verifyButton() throws Exception {
 		if(button.isEnabled()) {
 			button.click();
+			
 			
 		}
 	}
